@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Disney Trivia</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./assets/css/reset.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+      <div id="wrapper">
+          <div id="header">
+            <h1>Test your Disney Knowledge!</h1>
+          </div>
+          <div id="body">
+              <div id="subheader">
+                  <br>
+
+                  <div id="timer">00:15</div>
+        
+              </div>
+              <div id="quizArea">
+                  <br>
+                  <h2 id = "formHeader">Welcome to my trivia game! There are a total of 6 questions related to Disney and Disney Pixar. You have 15 seconds to answer each question.</h2> <br>
+
+                  <h3 id = "resultsArea"></h3>
+
+                  <img id="formImg" src="" alt="Answer Image" height="300" width="200">
+
+                  <form id ="formId">
+                      <h2 id="popQuestion"></h2>
+                      <br>
+
+                      <input type ="radio" id = "radioBtn0" class = "radBtnClass" name ="radInput" value=""><label  for="radioBtn0" class="labelClass" id="radioText0"></label><br><br>
+
+                      <input type ="radio" id = "radioBtn1" class = "radBtnClass" name ="radInput" value=""><label for="radioBtn1" class="labelClass" id="radioText1"></label><br><br>
+
+                      <input type ="radio" id = "radioBtn2" class = "radBtnClass" name ="radInput" value=""><label for="radioBtn2" class="labelClass" id="radioText2"></label></h3><br><br>
+
+                      <input type ="radio" id = "radioBtn3" class = "radBtnClass" name ="radInput" value=""><label for="radioBtn3" class="labelClass" id="radioText3"></label><br><br>
+                    </form>
+                    <button id="startBtn">Start!</button>
+                    <br>
+                    <button id="submitBtn">Submit</button>
+              </div>
+          </div>
+      </div>
+        
+        <script src="./assets/javascript/app.js"></script>
+    </body>
+</html>
