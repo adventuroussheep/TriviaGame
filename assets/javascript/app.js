@@ -12,14 +12,16 @@ var blankArray = [{ question: "", choices: ["", "", "", ""], answer: 0 }];
 
 // Waits for document to completely load
 document.addEventListener("DOMContentLoaded", function() {
+  $("#resetAll").hide();
   $("#formId").hide();
   $("#submitBtn").hide();
   $("#startBtn").on("click", start);
   $("#submitBtn").on("click", submit);
+  $("#resetAll").on("click", restart);
   $("#formImg").hide();
 
 
-  // Timer Functions
+  // Timer/button Functions
   function submit() {
     x++;
     checkWin();
@@ -51,6 +53,20 @@ document.addEventListener("DOMContentLoaded", function() {
     time--;
     var converted = timeConverter(time);
     $("#timer").text(converted);
+  }
+  function restart(){
+    x=0;
+    time = 15;
+    clockStart = false;
+    answered = 0;
+    numCorrect = 0;
+    numIncorrect = 0;
+    numTimeout = 0;
+    start();
+    $("#submitBtn").show();
+    $("#resetAll").hide();
+    $("#resultsArea").hide();
+
   }
   // time Converter
   function timeConverter(t) {
@@ -214,10 +230,12 @@ document.addEventListener("DOMContentLoaded", function() {
     function gameOver() {
       stop();
       setTimeout(function() {
+        stop();
+        $("#resetAll").show();
         $("#formId").hide();
         $("#submitBtn").hide();
-        stop();
         $("#formHeader").text("Results:");
+        $("#resultsArea").show();
         $("#resultsArea").html(
           "<h4>" +
             "Correct: " +
